@@ -1,0 +1,9 @@
+const ejs = require('ejs');
+const fs = require('fs');
+const path = require('path');
+
+// Render index.ejs to index.html
+ejs.renderFile('views/index.ejs', { title: "techiuv" }, (err, str) => {
+  if (err) throw err;
+  fs.writeFileSync(path.join(__dirname, 'dist/index.html'), str);
+});
