@@ -1,0 +1,148 @@
+:root {
+    --charcoal-black: #1C1C1C;    
+    --slate-gray: #a8a8a8;
+    --primary-color: #d63547;
+    --white: #ffffff;
+    --offcanvas-bg: #191919;    
+    --font-bold: 500;
+    
+    --font-medium: 400;
+    
+    --font-light:300;
+    
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:  border-box;
+}
+
+body {
+    background-color: var(--charcoal-black);
+    color: var(--white);
+    font-family: 'Fira Sans', sans-serif;
+
+}
+
+section {
+    width:  100vw;    
+}
+
+/* should be removed */
+
+.hamburger-menu {
+    border: none;
+}
+
+.hamburger-menu:hover,
+.navbar-toggler:focus,
+#btn-close:hover,
+#btn-close:focus {
+    box-shadow: none;
+}
+
+nav {
+    min-height: 8vh;
+    position: relative;
+    
+}
+
+nav .offcanvas {
+    background: var(--offcanvas-bg);
+    
+    .close-btn {
+        top: 3%;
+        right: 5%;
+        
+        i{
+            color:  var(--slate-gray);
+            cursor: pointer;
+            
+            hover{
+                color: white;
+            }
+        }
+        
+    }
+}
+
+
+nav .offcanvas-body ul li a  {
+    color: var(--slate-gray);
+    font-weight:  var(--font-light);
+    cursor: pointer;
+    margin:  2% 0 0 5%;
+    font-size:  1.2rem;
+    transition:  .2s ease;
+    text-decoration:  none;
+    
+    
+    
+}
+
+nav .offcanvas-body ul li a:hover{
+    color: white;
+}
+
+nav .offcanvas-body div ul{
+    margin-top: 2%;
+}
+
+.offcanvas-body #copyright {
+    color: var(--slate-gray);
+    font-weight:  var(--font-light);
+    position:  absolute;
+    bottom:  2%;
+    transform: translateX(-50%);
+    left:  50%;
+}
+
+/* end of removal */
+
+.heading {
+    text-align:  center;
+    color:  white;    
+    font-weight: var(--font-bold);
+    
+}
+
+
+.offcanvas{
+    background: var(--offcanvas-bg);
+    
+}
+
+.line{
+    height:  1px;
+    width:  90%;
+    margin: auto;
+    background:  #2e2e2e;
+    border-radius: 50%;
+    content: "";
+    display: flex;
+    position: relative;
+}
+
+.about-p{
+    /* color: var(--slate-gray); */
+    font-weight:  var(--font-light);
+    
+}
+
+
+.picture{
+    aspect-ratio:1/1;
+    
+    margin: auto;
+    display: flex;
+    justify-content:  center;
+    width:  50% ;
+    
+}
+
+
+@media(){
+    
+  }
