@@ -1,0 +1,46 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "Artist Yuvraj",
+            "description": "A portfolio website showcasing the artworks of artist Yuvraj.",
+            "image": "assets/img/artist-yuvraj.png",
+            "link": "https://artistyuvraj.netlify.app"
+        },
+        {
+            "id": 2,
+            "title": "Portfolio Yuvraj",
+            "description": "A comprehensive online portfolio.",
+            "image": "assets/img/portfolioyuv.png",
+            "link": "https:///portfolioyuv.netlify.app"
+        },
+        {
+            "id": 3,
+            "title": "Weather App",
+            "description": "A web application providing real-time weather updates and forecasts.",
+            "image": "assets/img/weather-app.png",
+            "link": "https://techiuv.github.io/Whether-app/"
+        },
+        {
+            "id": 4,
+            "title": "Jarvis",
+            "description": "An AI assistant built using Python for various task automation.",
+            "image": "assets/img/jarvis.png",
+            "link": "https://github.com/techiuv/JARVIS"
+        },
+        {
+            "id": 5,
+            "title": "Flappy Bird",
+            "description": "A classic game implemented in Python with interactive gameplay.",
+            "image": "assets/img/flappy-bird.png",
+            "link": "https://github.com/techiuv/flappy-bird"
+        },
+        {
+            "id": 6,
+            "title": "Dino Python Game",
+            "description": "A browser-based Dino game developed in Python.",
+            "image": "assets/img/dino-game.png",
+            "link": "https://github.com/techiuv/dino-python-game"
+        }
+    ]
+}
