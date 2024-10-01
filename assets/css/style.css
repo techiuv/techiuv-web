@@ -3,12 +3,13 @@
     --slate-gray: #a8a8a8;
     --primary-color: #d63547;
     --white: #ffffff;
-    --offcanvas-bg: #191919;    
+    --offcanvas-bg: #222222;   
+     
     --font-bold: 500;
-    
-    --font-medium: 400;
-    
+    --font-medium: 400;    
     --font-light:300;
+    
+    --bs-md: 768px;
     
     
 }
@@ -26,14 +27,25 @@ body {
 
 }
 
+.loader{
+    background:  var(--primary-color);
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+}
+
+.loader p{
+    font-weight: var(--font-light);
+}
+
 section {
     width:  100vw;    
 }
 
-/* should be removed */
 
 .hamburger-menu {
     border: none;
+    color:  white;
 }
 
 .hamburger-menu:hover,
@@ -49,48 +61,47 @@ nav {
     
 }
 
-nav .offcanvas {
+
+.offcanvas {
     background: var(--offcanvas-bg);
-    
-    .close-btn {
-        top: 3%;
-        right: 5%;
-        
-        i{
-            color:  var(--slate-gray);
-            cursor: pointer;
-            
-            hover{
-                color: white;
-            }
-        }
-        
-    }
 }
 
+.close-btn {
+    top: 3%;
+    right: 5%;
+}
 
-nav .offcanvas-body ul li a  {
+.close-btn i {
     color: var(--slate-gray);
-    font-weight:  var(--font-light);
     cursor: pointer;
-    margin:  2% 0 0 5%;
-    font-size:  1.2rem;
-    transition:  .2s ease;
-    text-decoration:  none;
-    
-    
-    
 }
 
-nav .offcanvas-body ul li a:hover{
+.close-btn i:hover {
     color: white;
 }
 
-nav .offcanvas-body div ul{
+
+.offcanvas-body ul li a  {
+    color: var(--slate-gray);
+    font-weight:  var(--font-light);
+    cursor: pointer;
+    font-size:  1.2rem;
+    transition:  .2s ease;
+    text-decoration:  none;     
+    margin:  5% ;
+    
+}
+
+
+.offcanvas-body ul li a:hover{
+    color: white;
+}
+
+.offcanvas-body div ul{
     margin-top: 2%;
 }
 
-.offcanvas-body #copyright {
+#copyright {
     color: var(--slate-gray);
     font-weight:  var(--font-light);
     position:  absolute;
@@ -99,7 +110,7 @@ nav .offcanvas-body div ul{
     left:  50%;
 }
 
-/* end of removal */
+
 
 .heading {
     text-align:  center;
@@ -128,21 +139,82 @@ nav .offcanvas-body div ul{
 .about-p{
     /* color: var(--slate-gray); */
     font-weight:  var(--font-light);
+    width:  80%;
+    margin: auto;
+    font-size: 2rem;
+    margin-top: 3%;
+    /* text-align:  center; */
     
+}
+
+.intro-heading {
+    font-weight: var(--font-bold);
+    font-size: 3rem;
 }
 
 
 .picture{
-    aspect-ratio:1/1;
-    
+    aspect-ratio:3/4;
+    object-fit:  cover;
     margin: auto;
     display: flex;
     justify-content:  center;
-    width:  50% ;
+    width:  50%;
     
 }
 
 
-@media(){
+
+.heading {
+    font-size: 4rem;
+    /* text-decoration: underline;
+    text-decoration-style: wavy; */
+    font-weight:  var(--font-medium);
+    margin-top:  2%;
+}
+
+/* Progress Bar Container */
+#progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--primary-color); /* Customize the color */
+    z-index: 9999;
+    transition: width 0.4s ease-out;
+}
+
+
+.intro-p{
+    font-weight:  var(--font-light);
+    width:  75%;
+    font-size: 2rem;
+}
+
+
+@media screen and (max-width:768px){
+    .offcanvas-body ul li a{
+        font-size: 1rem;
+    }
     
-  }
+    .about-p,
+    .picture{
+        width: 90%;
+        font-size:  1rem;
+    }
+    
+    
+    .intro-heading,
+    .heading {
+        font-size: 2rem;
+    }
+    
+    .intro-p{
+        font-size: 1.2rem;
+    }
+    
+    
+    
+ 
+}
