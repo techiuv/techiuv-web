@@ -1,7 +1,3 @@
 [build]
   publish = "dist"
-  command = "node render-ejs.js"  # Script to render EJS to HTML
-
-[build]
-  publish = "dist"
-  command = "npm run build-css"
+  command = "npm run build-css && node render-ejs.js"  # First build CSS, then render EJS to HTML
