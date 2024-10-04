@@ -168,8 +168,6 @@ function portfolioAnimation() {
   // Cards animation
   const cardsWrapper = gsap.utils.toArray(".cards_item");
   const cardsEl = gsap.utils.toArray(".cards_el");
-  
-  const cards = gsap.utils.toArray(".cards");
 
   cardsWrapper.forEach((e, i) => {
     const card = cardsEl[i];
