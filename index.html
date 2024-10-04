@@ -12,7 +12,7 @@
 
     <meta property="og:title" content="techiuv">
     <meta property="og:description" content="">
-    <meta property="og:image" content="image-url.jpg">
+    <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_large_image">
 
     <meta name="theme-color" content="#1C1C1C">
@@ -54,9 +54,10 @@
     <header>
         <nav class="w-100 d-flex justify-content-between align-content-around px-3">
             
-            <a href="#" class="text-decoration-none cursor-pointer mx-3 mx-md-5 my-3 fs-5 fs-md-3 fs-lg-1 " style="color:white;">techiuv<span style="color:var(--primary-color);">.</span></a>
-            <button class="btn hamburger-menu fs-5 fs-md-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                <i class="bi bi-list"></i>
+            <a href="#" class="text-decoration-none cursor-pointer mx-3 mx-md-5 my-3 fs-1  " style="color:white;" onclick="window.location.reload();">techiuv<span style="color:var(--primary-color);">.</span></a>
+            <button class="bg-transparent hamburger-menu mx-3 mx-md-5 my-3 fs-3 fs-md-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                 <i class="bi bi-list"></i>
+                
             </button>
 
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -70,44 +71,53 @@
                 <div class="line"></div>
                 
                 <div class="offcanvas-body">
-                    <div class="d-flex align-content-center justify-content-between px-2">
-                        <ul class="list-unstyled w-50">
-                            <li><a href="#home" class="hvr-float-shadow">Home</a></li>
-                            <li><a href="#about" class="hvr-float-shadow">About</a></li>
-                            <li><a href="#portfolio" class="hvr-float-shadow">Portfolio</a></li>
-                           
-                        </ul>
-                        <ul class="list-unstyled w-50">
-                            <li><a href="#skills" class="hvr-float-shadow">Skills</a></li>
-                            <li><a href="#contact" class="hvr-float-shadow">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="line"></div>
-                    <div class="d-flex justify-content-between px-2 ">
-                        <ul class="social-links gap-3 list-unstyled my-3  w-50">
-                        <li>
-                            <a href="https://instagram.com/@artistyuvraj_" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-instagram"></i> Instagram 
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/techiuv" target="_blank" rel="noopener noreferrer">  
-                                <i class="bi bi-github"></i> GitHub 
-                            </a>
-                        </li>
+                                     
+                    <div>
+                        <div class="d-flex justify-content-between align-content-center ">
+                            <ul class="w-50">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/">Skills</a></li>
+                                <li><a href="/">Portfolio</a></li>
+                            </ul>
+                            <ul class="w-50">
+                                <li><a href="/">Talents</a></li>
+                             
+                                <li><a href="/">Contacts</a></li>
+                            </ul>
+                        </div>
                         
-                    </ul>
-                    <ul class=" social-links list-unstyled w-50">
-                       
-                        <li>
-                            <a href="https://portfolioyuv.netlify.app" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-globe"></i> Website 
-                            </a>
-                        </li>
-                    </ul>
+                        <div class="line"></div>
+                        
+                        <div class="d-flex justify-content-between align-content-center ">
+                            <ul class="w-50">
+                                <li>
+                                    <a href="https://github.com/techiuv" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> GitHub</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/artistyuvraj_/profilecard/?igsh=MTdncGFscWtwYXFqag==" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i> Instagram</a>
+                                </li>
+                               
+                            </ul>
+                            <ul class="w-50">
+                                <li>
+                                    <a href="" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> Linkedin</a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="line"></div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <a href="mailto:mail.yuvraj0317@gmail.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-envelope"></i>   mail.yuvraj0317@gmail.com</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.google.com/maps/place/Jamui,+Bihar" target="_blank" rel="noopener noreferrer"><i class="bi bi-geo-fill"></i> Jamui, Bihar</a>
+                                </li>
+                            </ul>
+                        </div>
+                      
                     </div>
-                    
                     <p class="fs-6 fs-md-4 fs-lg-1 font-weight-lighter" id="copyright"></p>
                     <script>
                         $(document).ready(function() {                            
@@ -121,67 +131,88 @@
 
     <main>
         
-        <section class="w-100 h-auto pb-4" id="home">
-            <div  class="mx-auto d-flex justify-content-center align-content-center flex-column">
-                <h3 class="intro-heading mx-auto">Yuvraj</h3>
-                <p class="text-center mx-auto intro-p ">I'm web developer and a professional artist based in India </p>
-            </div>
-            <div>
-                <img src="assets/img/960c1ab8-752d-4d19-8a19-7a3d10c459d7.jpg" alt="" class="img-fluid picture">
-            </div>
-        </section>
-
-        <section class="w-100" id="about">
-            <h3 class="heading">About Me</h3>
-            <p class="about-p">My name is Yuvraj, and I am a master artist and web developer based in Jamui, Bihar. With a profound passion for both the visual arts and technology, I have spent the last <span id="exp"></span> honing my skills across various artistic mediums, including charcoal, oil, acrylic, watercolor, and pastels.</p>
+        <section class="hero" id="home">
             
-            <p class="about-p">
-              As a web dev, I specialize in HTML, CSS, JavaScript, Bootstrap, Python, C, and React.js. My dual expertise allows me to create immersive digital experiences that blend artistry and functionality. 
-            </p>
+            <div class="hero-wrapper">
+                <div class="hero-paragraph">
+                    <p class="hero-paragraph-text">
+                        My name is Yuvraj, and I am a master artist and web developer based in Jamui, Bihar. With a profound passion for both the visual arts and technology, I have spent the last <span id="exp"></span> honing my skills across various artistic mediums, including charcoal, oil, acrylic, watercolor, and pastels.As a web dev, I specialize in HTML, CSS, JavaScript, Bootstrap, Python, C, and React.js. My dual expertise allows me to create immersive digital experiences that blend artistry and functionality. </p>
             
-            <p class="about-p">
-                Balancing creativity and technical prowess, I'm constantly pushing the boundaries of what's possible in both fields. With a keen focus on user experience, seamless integration of technology, and artistic expression, my work resonates with both technical and creative audiences.
-            </p>
-        </section>
-        
-        
-        <section id="portfolio">
-            <h3 class="heading">Portfolio</h3>
-            <p></p>
-            
-            
-            
-            <div id="projects-container">
-                <div class="project-box position-relative">
-                    <img src="" alt="" class="img-fluid">
-                    <div class="position-absolute">
-                        <h3 class="tittle"></h3>
-                        <p class="description"></p>
-                        <a href="" class="link" target="_blank" rel="noopener noreferrer"></a>
-                    </div>
+                  
                 </div>
             </div>
+            <div class="hero-bg">
+                <img src="assets/img/960c1ab8-752d-4d19-8a19-7a3d10c459d7.jpg" alt="" class="hero-bg-img img-fluid">
+            </div>
         </section>
-        <section>
+        
+        
+        
+        <section id="skills">
+            <h3 class="heading">Skills</h3>
+           
+            
+           <div class="counter">
+    <div class="counter-1 digit">
+        <div class="num">0</div>
+        <div class="num numioffset1">1</div>
+    </div>
+
+    <div class="counter-2 digit">
+        <div class="num">0</div>
+        <div class="num numioffset2">1</div>
+        <div class="num">2</div>
+        <div class="num">3</div>
+        <div class="num">4</div>
+        <div class="num">5</div>
+        <div class="num">6</div>
+        <div class="num">7</div>
+        <div class="num">8</div>
+        <div class="num">9</div>
+        <div class="num">0</div>
+    </div>
+
+    <div class="counter-3 digit"></div> <!-- Counter 3 will be dynamically filled -->
+</div>
+
+            
+         
+        </section>
+        
+        <section id="portfolio">
+            
+            <h3 class="heading">Portfolio</h3>
+            
+           
+        
+ 
+            
+        </section>
+        <div class="end-anime"></div>
+        
+        <section style="height:100vh;" id="contact">
             <h3 class="heading">Get in Touch</h3>
             <p></p>
-            
-            <form >
-                
-            </form>
+         
         </section>
+        
     </main>
     
     <footer>
         
     </footer>
-
+    
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> 
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
-    <script src="assets/functions/email.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/functions/emal.js"></script>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
