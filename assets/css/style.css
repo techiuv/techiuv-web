@@ -10,6 +10,7 @@
     --font-light:300;
     
     --bs-md: 768px;
+   
     
     
 }
@@ -27,6 +28,8 @@ body {
 
 }
 
+/* Preloader css */
+
 .loader{
     background:  var(--primary-color);
     display: flex;
@@ -42,10 +45,29 @@ section {
     width:  100vw;    
 }
 
+/* scrollbar css */
+
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--charcoal-black); 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color); 
+    border-radius: 10px;
+    
+}
+
+/* Navbar & Sidebar   */
 
 .hamburger-menu {
     border: none;
     color:  white;
+    
 }
 
 .hamburger-menu:hover,
@@ -81,15 +103,19 @@ nav {
 }
 
 
-.offcanvas-body ul li a  {
+.offcanvas-body div ul li a  {
     color: var(--slate-gray);
     font-weight:  var(--font-light);
     cursor: pointer;
     font-size:  1.2rem;
     transition:  .2s ease;
     text-decoration:  none;     
-    margin:  5% ;
     
+    
+}
+
+.offcanvas-body div div:first-child ul li a{
+    font-size: 1.3rem;
 }
 
 
@@ -97,8 +123,12 @@ nav {
     color: white;
 }
 
-.offcanvas-body div ul{
-    margin-top: 2%;
+.offcanvas-body div ul li{
+    margin-top: 1.2rem;
+}
+
+.offcanvas-body div ul li a i{
+    margin-right: 1.5%;
 }
 
 #copyright {
@@ -136,44 +166,10 @@ nav {
     position: relative;
 }
 
-.about-p{
-    /* color: var(--slate-gray); */
-    font-weight:  var(--font-light);
-    width:  80%;
-    margin: auto;
-    font-size: 2rem;
-    margin-top: 3%;
-    /* text-align:  center; */
-    
-}
 
-.intro-heading {
-    font-weight: var(--font-bold);
-    font-size: 3rem;
-}
-
-
-.picture{
-    aspect-ratio:3/4;
-    object-fit:  cover;
-    margin: auto;
-    display: flex;
-    justify-content:  center;
-    width:  50%;
-    
-}
-
-
-
-.heading {
-    font-size: 4rem;
-    /* text-decoration: underline;
-    text-decoration-style: wavy; */
-    font-weight:  var(--font-medium);
-    margin-top:  2%;
-}
 
 /* Progress Bar Container */
+
 #progressBar {
     position: fixed;
     top: 0;
@@ -186,35 +182,235 @@ nav {
 }
 
 
-.intro-p{
-    font-weight:  var(--font-light);
-    width:  75%;
-    font-size: 2rem;
+
+
+/* Hero Section */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-wrapper {
+  padding: 6.4rem;
+}
+
+.hero-paragraph {
+  padding-top: 50vh;
+  padding-left: 20rem ;
+  padding-bottom: 5rem;
+}
+
+.hero-paragraph-text,
+.hero-paragraph-text span {
+  font-size: 3rem;
+  line-height: 1.2;
 }
 
 
+
+.hero-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  scale: 1;
+}
+
+
+/*  */
+
+.heading {
+    font-size:  4rem;
+    font-weight: var(--font-medium);
+    letter-spacing: 2px;
+    
+}
+
+
+/* .counter {
+    position: fixed;
+    left: 50px;
+    bottom: 50px;
+    display: flex;
+    height: 100px;
+    font-size: 100px;
+    line-height: 102px;
+    font-weight: 400;
+}
+
+.digit {
+    position: relative;
+    top: 0;
+}
+
+.num {
+    opacity: 0; 
+    transition: opacity 0.5s ease;
+    position: relative;
+}
+
+.numioffset1 {
+    position: relative;
+    right: 25px;
+}
+
+.numioffset2 {
+    position: relative;
+    right: 10px;
+}
+
+ */
+ 
+ 
+ /* portfolio section */
+ 
+ #portfolio {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  padding-top: 5rem;
+  
+  
+}
+
+.cards {
+  width: 80%;
+  margin: 0 auto;
+  padding: 3%;
+  position:  relative;
+  
+  
+}
+
+.cards_item {
+  width: 100%;
+  perspective: 500px;
+  margin-bottom: 5%;
+  
+}
+
+.cards_item:last-child {
+  margin-bottom: 0;
+}
+
+.cards_el {
+  width: 100%;
+  height: 400px;
+}
+
+.cards_el-wrapp {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 40px;
+  padding: 3%;
+  border-radius: 20px;
+  background: var(--offcanvas-bg);
+  backdrop-filter: blur(10px);
+  will-change: blur;
+}
+
+.cards_img {
+  width: 40%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.cards_img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cards_txt {
+  width: calc(60% - 40px);
+  
+}
+
+.cards_el-title {
+  margin-bottom: 5%;
+  font-size: 3rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight:  var(--font-medium);
+}
+
+.cards_el-p {
+  color: var(--slate-gray);
+  font-size: 1.2rem;
+  font-weight: var(--font-light);
+}
+
+.end-anime{
+    height: 1px;
+    margin-top:  50px;
+    
+    
+}
+
+/* Contact section */
+
+#contact{
+    margin-top:  5vh;
+}
+
+/* Responsive */
 @media screen and (max-width:768px){
-    .offcanvas-body ul li a{
+    .offcanvas-body div ul li a,
+    .cards_el-p{
         font-size: 1rem;
     }
     
-    .about-p,
-    .picture{
-        width: 90%;
-        font-size:  1rem;
+    .offcanvas-body div div:first-child ul li a{
+        font-size: 1.1rem;
+    }    
+    
+    
+    .hero-paragraph {
+        padding-left:  0;
     }
     
-    
-    .intro-heading,
-    .heading {
+    .hero-paragraph-text,
+    .hero-paragraph-text span,
+    .cards_el-title{
         font-size: 2rem;
     }
     
-    .intro-p{
-        font-size: 1.2rem;
+    .hero-paragraph{
+        padding-left: 0;
+        padding-top: 75vh;
+    }
+     
+     
+    .hero-wrapper{
+        padding: 1rem;
     }
     
+    .heading {
+        font-size: 3rem;
+    }
     
+    .cards{
+        width:  90%;
+        padding:  1%;
+    }
     
- 
+    .cards_el{
+        height:  300px;
+    }
 }
+
