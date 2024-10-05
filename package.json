@@ -1,5 +1,0 @@
-{
-  "scripts": {
-    "build-css": "sass src/scss:dist/css --no-source-map"
-  }
-}
