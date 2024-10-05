@@ -45,22 +45,6 @@ section {
     width:  100vw;    
 }
 
-/* scrollbar css */
-
-/* For Chrome, Edge, and Safari */
-::-webkit-scrollbar {
-    width: 5px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--charcoal-black); 
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color); 
-    border-radius: 10px;
-    
-}
 
 /* Navbar & Sidebar   */
 
@@ -349,12 +333,25 @@ nav {
   font-weight:  var(--font-medium);
 }
 
-.cards_el-p {
+.cards_el-p,
+.cards_el-a {
   color: var(--slate-gray);
   font-size: 1.2rem;
   font-weight: var(--font-light);
 }
 
+.cards_el-a {
+    cursor: pointer;
+    text-decoration:  none;
+}
+
+.cards_el-a:hover{
+    color: white;
+}
+
+.cards_txt_md{
+    display: none;
+}
 .end-anime{
     height: 1px;
     margin-top:  50px;
@@ -367,6 +364,28 @@ nav {
 #contact{
     margin-top:  5vh;
 }
+
+/* footer */
+
+footer{
+    background:  var(--offcanvas-bg);
+    padding:  3rem 0;
+}
+
+.footer-ul li a{
+    cursor: pointer;
+    color: var(--slate-gray);
+    font-weight:  var(--font-light);
+    font-size: 2rem;
+    text-decoration: none;
+    margin:  2rem 0;
+}
+
+#copyright {
+    color: var(--slate-gray);
+    font-weight:  var(--font-light);
+    font-size: 2rem;
+    }
 
 /* Responsive */
 @media screen and (max-width:768px){
@@ -406,11 +425,25 @@ nav {
     
     .cards{
         width:  90%;
-        padding:  1%;
+        padding:  0;
+    }
+    
+    .cards_el-wrapp{
+        padding: 0;
+        border-radius: 0;
     }
     
     .cards_el{
         height:  300px;
     }
+    
+    .cards_txt{
+        display: none;
+    }
+    
+    .cards_img {
+        width: 100%;
+        border-radius: 10px;
+      }
 }
 
