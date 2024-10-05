@@ -84,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
 const projects = [
     {
         id: 1,
@@ -97,14 +96,14 @@ const projects = [
         id: 2,
         title: "Portfolio Yuvraj",
         description: "A comprehensive online portfolio.",
-        image: "assets/img/portfolioyuv.png",
+        image: "assets/img/Portfolio_Yuvraj.jpg",
         link: "https:///portfolioyuv.netlify.app"
     },
     {
         id: 3,
         title: "Weather App",
         description: "A web application providing real-time weather updates and forecasts.",
-        image: "assets/img/weather-app.png",
+        image: "assets/img/Weather_App.png",
         link: "https://techiuv.github.io/Whether-app/"
     },
     {
@@ -116,10 +115,10 @@ const projects = [
     },
     {
         id: 5,
-        title: "Flappy Bird",
-        description: "A classic game implemented in Python with interactive gameplay.",
-        image: "assets/img/flappy-bird.png",
-        link: "https://github.com/techiuv/flappy-bird"
+        title: "Music Player App",
+        description: "A web based music streaming platform with personal playlist.",
+        image: "assets/img/music_player.png",
+        link: "https://techiuv.github.io/Music-App/"
     },
     {
         id: 6,
@@ -133,56 +132,41 @@ const projects = [
 // Function to create project cards
 function createProjectCards() {
     const portfolio = document.querySelector('#portfolio');
-    
+
     // Ensure the portfolio section exists
     if (!portfolio) {
         console.error("Portfolio section not found");
         return;
     }
 
-    // parent div for all cards
+    // Parent div for all cards
     const cardContainer = document.createElement('div');
-    cardContainer.classList.add('cards'); 
+    cardContainer.classList.add('cards');
 
     projects.forEach(project => {
-        // card structure
+        // Card structure
         const cardItem = document.createElement('div');
         cardItem.classList.add('cards_item');
 
-        const cardEl = document.createElement('div');
-        cardEl.classList.add('cards_el');
-
-        const cardWrap = document.createElement('div');
-        cardWrap.classList.add('cards_el-wrapp');
-
-        const cardImgContainer = document.createElement('div');
-        cardImgContainer.classList.add('cards_img');
-
-        const cardImg = document.createElement('img');
-        cardImg.src = project.image;
-        cardImg.alt = project.title;
-
-        const cardTxt = document.createElement('div');
-        cardTxt.classList.add('cards_txt');
-
-        const cardTitle = document.createElement('h3');
-        cardTitle.classList.add('cards_el-title');
-        cardTitle.textContent = project.title;
-
-        const cardDescription = document.createElement('p');
-        cardDescription.classList.add('cards_el-p');
-        cardDescription.textContent = project.description;
-
-        // Append elements
-        cardImgContainer.appendChild(cardImg);
-        cardTxt.appendChild(cardTitle);
-        cardTxt.appendChild(cardDescription);
-
-        cardWrap.appendChild(cardImgContainer);
-        cardWrap.appendChild(cardTxt);
-
-        cardEl.appendChild(cardWrap);
-        cardItem.appendChild(cardEl);
+        cardItem.innerHTML = `
+            <div class="cards_el">
+                <div class="cards_el-wrapp">
+                    <div class="cards_img">
+                        <img src="${project.image}" alt="${project.title}">
+                    </div>
+                    <div class="cards_txt position-relative">                       
+                        <h3 class="cards_el-title">${project.title}</h3>
+                        <p class="cards_el-p">${project.description}</p>
+                        <a class="cards_el-a" href="${project.link}" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> View Project</a>                       
+                    </div>
+                    <div class="cards_txt_md position-absolute w-100 h-100 ">
+                        <h3 class="cards_el-title">${project.title}</h3>
+                        <p class="cards_el-p">${project.description}</p>
+                        <a class="cards_el-a" href="${project.link}" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> View Project</a>           
+                    </div>
+                </div>
+            </div>
+        `;
 
         // Append cardItem to the cardContainer
         cardContainer.appendChild(cardItem);
@@ -192,5 +176,6 @@ function createProjectCards() {
     portfolio.appendChild(cardContainer);
 }
 
-// Call the function to create cards
+
 createProjectCards();
+
