@@ -1,4 +1,4 @@
-const tl = gsap.timeline();
+const tl = gsap.timeline(); 
 
 
 
@@ -63,23 +63,6 @@ const initScroll = () => {
 
 window.addEventListener('DOMContentLoaded', initLenis);
 
-
-document.addEventListener("DOMContentLoaded", function() {
-    const counter3 = document.querySelectorAll(".num");
-
-    function animateCounterDivs() {
-        gsap.from(counter3, {
-            opacity: 0,
-            y: -50,
-            stagger: 0.5,  
-            duration: 1,  
-            ease: "power2.out" 
-        });
-    }
-
-    
-    animateCounterDivs();
-});
 
 
  
@@ -168,6 +151,8 @@ function portfolioAnimation() {
   // Cards animation
   const cardsWrapper = gsap.utils.toArray(".cards_item");
   const cardsEl = gsap.utils.toArray(".cards_el");
+  
+ // const cards = gsap.utils.toArray(".cards");
 
   cardsWrapper.forEach((e, i) => {
     const card = cardsEl[i];
@@ -198,3 +183,103 @@ function portfolioAnimation() {
 }
 
 portfolioAnimation();
+
+function animateForm() {
+    // Animate form element
+    gsap.from("#form", {
+        opacity: 0,
+        transformOrigin: "bottom",
+        duration: 1,
+        scrollTrigger: {
+            trigger: "#contact",
+            start: "top 80%",
+            end: "top 70%",
+            scrub: 1
+        }
+    });
+
+    // Animate border-bottom for input and textarea elements
+    gsap.fromTo(
+        'input[type="text"], input[type="email"], textarea', 
+        { // Initial State
+            opacity: 0,
+            borderBottomWidth: "0px", // Start with no border-bottom
+        }, 
+        { // Final State
+            opacity: 1,
+            borderBottomWidth: "1px",  
+            width: "100%",
+            duration: 1,
+            scrollTrigger: {
+                trigger: "#contact",
+                start: "top 80%",
+                end: "top 50%",
+                scrub: 1
+            }
+        }
+    );
+
+    // Animate submit button
+    gsap.from('input[type="submit"]', {
+        scale: 0,
+        opacity: 0,
+        transformOrigin: "bottom",
+        duration: 1,
+        scrollTrigger: {
+            trigger: "#contact",
+            start: "top 80%",
+            end: "top 70%",
+            scrub: 1
+        }
+    });
+}
+
+animateForm();
+
+
+
+function animateFooterUl() {
+  gsap.from(".footer-ul li a", {
+    scaleY: 1,
+    transformOrigin :"bottom",
+ //   opacity: 0,
+    duration: 1, // Set a duration for the animation
+    stagger: 0.5,
+    scrollTrigger: {
+      trigger: "footer",
+      start: "top 90%",
+     // scrub: 1,
+    }
+  });
+}
+
+animateFooterUl();
+
+
+// Function to animate the counter
+
+function animateFooter() {
+  // Get the footer element with the class '.footer-name'
+  const footerName = document.querySelector('.footer-name');
+
+  // Use Splitting to split the text into individual characters
+ Splitting({ target: footerName, by: 'chars' });
+
+  // Animate each character using GSAP with ScrollTrigger
+  gsap.from(".char", {
+    scaleY: 0,
+    opacity: 0,
+    y:100,
+    transformOrigin: 'top',
+    stagger: 0.05, // Delay between each character's animation
+    duration: 0.8, // Animation duration
+    scrollTrigger: {
+      trigger: ".footer-brand",   // Trigger animation when the footer is in view
+      start: 'top 90%',   // Animation starts when the top of the footer reaches the bottom of the viewport
+      //end: 'bottom bottom',  // Animation ends when the bottom of the footer reaches the bottom of the viewport
+      //toggleActions: 'play none none none',  // Play animation once
+      //scrub: true
+    }
+  });
+}
+// animateFooter()
