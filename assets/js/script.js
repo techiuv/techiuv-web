@@ -18,6 +18,30 @@ document.onreadystatechange = function () {
     }
 };
 
+// Select all links inside nav ul li
+document.addEventListener("DOMContentLoaded", function () {
+    let navLinks = document.querySelectorAll(".offcanvas div ul li a");
+    let offcanvas = document.getElementById("offcanvasRight");
+
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+            // Prevent the default action of the anchor tags
+            // event.preventDefault();
+
+            let offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvas);
+            offcanvasInstance.hide();
+
+            // Manually navigate to the target section
+            let target = link.getAttribute("href");
+            document.querySelector(target).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+
+
+
 function highlightWords(paragraphClass, wordsToHighlight) {
     let paragraphs = document.querySelectorAll(paragraphClass);
 
@@ -55,33 +79,7 @@ function  calcExp() {
 
 calcExp()
 
-highlightWords('.about-p', importantWords);
-
-document.addEventListener("DOMContentLoaded", function() {
-    const counter3 = document.querySelector(".counter-3");
-
-    // Function to create the counter divs
-    function createCounterDivs() {
-        for (let i = 10; i <= 12; i++) {
-            for (let j = 1; j >= 0; j--) {
-                const div = document.createElement("div");
-
-                div.className = "num";
-                div.textContent = j;
-                counter3.appendChild(div);
-            }
-        }
-
-        // Add the final div '0'
-        const finalDiv = document.createElement("div");
-        finalDiv.className = "num";
-        finalDiv.textContent = "0";
-        counter3.appendChild(finalDiv);
-    }
-
-    // Call the function to create the divs
-    createCounterDivs();
-});
+// highlightWords('.about-p', importantWords);
 
 
 const projects = [
@@ -119,15 +117,15 @@ const projects = [
         description: "A web based music streaming platform with personal playlist.",
         image: "assets/img/music_player.png",
         link: "https://techiuv.github.io/Music-App/"
-    },
-    {
+    }
+    /* {
         id: 6,
         title: "Dino Python Game",
         description: "A browser-based Dino game developed in Python.",
         image: "assets/img/dino-game.png",
         link: "https://github.com/techiuv/dino-python-game"
     }
-];
+ */];
 
 // Function to create project cards
 function createProjectCards() {
@@ -176,6 +174,62 @@ function createProjectCards() {
     portfolio.appendChild(cardContainer);
 }
 
-
+// Call the function to create cards
 createProjectCards();
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    if (validateForm()) {
+      this.submit(); 
+    }
+  });
+});
+
+function validateForm() {
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const textarea = document.getElementById('message').value.trim();
+  
+  const toastLive = document.getElementById('liveToast');
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLive);
+  const toastBody = document.querySelector('.toast-body');
+
+  // Regular expressions for validation
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const namePattern = /^[a-zA-Z\s]+$/; 
+  
+   
+  if (name === '') {
+    toastBody.innerHTML = "Name cannot be empty!";
+    toastBootstrap.show();
+    return false;
+  } else if (!namePattern.test(name)) {
+    toastBody.innerHTML = "Name can only contain letters and spaces!";
+    toastBootstrap.show();
+    return false;
+  }
+
+  if (email === '') {
+    toastBody.innerHTML = "Email cannot be empty!";
+    toastBootstrap.show();
+    return false;
+  } else if (!emailPattern.test(email)) {
+    toastBody.innerHTML = "Please enter a valid email address!";
+    toastBootstrap.show();
+    return false;
+  }
+  
+  if (textarea === '') {
+      toastBody.innerHTML = "Message cannot be empty";
+      toastBootstrap.show();
+      return false
+  }
+
+  // If all validations pass
+  toastBody.innerHTML = ""; // Clear any previous messages
+  return true;
+}
