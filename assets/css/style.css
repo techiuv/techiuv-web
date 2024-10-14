@@ -455,6 +455,13 @@ footer{
 
 
 /* Responsive */
+
+@media screen and (max-width:1220px){
+    .hero-paragraph{
+        padding-left: 10rem;
+    }
+}
+
 @media screen and (max-width:768px){
     .offcanvas-body div ul li a,
     .cards_el-p{
