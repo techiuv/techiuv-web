@@ -179,17 +179,7 @@ createProjectCards();
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    if (validateForm()) {
-      this.submit(); 
-    }
-  });
-});
-
-function validateForm() {
+function validateForm(event) {
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const textarea = document.getElementById('message').value.trim();
@@ -202,34 +192,40 @@ function validateForm() {
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const namePattern = /^[a-zA-Z\s]+$/; 
   
-   
   if (name === '') {
     toastBody.innerHTML = "Name cannot be empty!";
     toastBootstrap.show();
+    event.preventDefault();  // Prevent submission if validation fails
     return false;
   } else if (!namePattern.test(name)) {
     toastBody.innerHTML = "Name can only contain letters and spaces!";
     toastBootstrap.show();
+    event.preventDefault();
     return false;
   }
 
   if (email === '') {
     toastBody.innerHTML = "Email cannot be empty!";
     toastBootstrap.show();
+    event.preventDefault();
     return false;
   } else if (!emailPattern.test(email)) {
     toastBody.innerHTML = "Please enter a valid email address!";
     toastBootstrap.show();
+    event.preventDefault();
     return false;
   }
   
   if (textarea === '') {
-      toastBody.innerHTML = "Message cannot be empty";
-      toastBootstrap.show();
-      return false
+    toastBody.innerHTML = "Message cannot be empty!";
+    toastBootstrap.show();
+    event.preventDefault();
+    return false;
   }
 
-  // If all validations pass
-  toastBody.innerHTML = ""; // Clear any previous messages
-  return true;
+  // Clear any previous error messages if all validations pass
+  toastBody.innerHTML = ""; 
+  return true;  // Allow the form to be submitted to Netlify
 }
+
+document.getElementById("form").addEventListener("submit", validateForm);
